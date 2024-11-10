@@ -9,6 +9,9 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(bodyParser.json());
 
+app.get('/', (req, res) => {
+    res.send('Hi and Welcome to the Expense Tracker API!'); 
+});
 
 app.get('/api/expenses', (req, res) => {
     db.query('SELECT * FROM expenses', (err, results) => {
